@@ -1,3 +1,15 @@
 body {
-  background-color: blue;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+/* SLIDE 1: HOME */
+
+.home h1 {
+  font-family: 'Tangerine', cursive;
+}
+
+
+.fp-watermark {
+  display: none;
 }
