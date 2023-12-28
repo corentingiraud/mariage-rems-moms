@@ -13,3 +13,10 @@ body {
 .fp-watermark {
   display: none;
 }
+
+/* SLIDE 2: LIEU */
+
+#map {
+  width: 1000px;
+  height: 600px;
+}
