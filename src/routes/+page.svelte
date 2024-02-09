@@ -1,16 +1,17 @@
 <script lang="ts">
-  import './style.scss';
-  import Main from './main/main.svelte';
-  import Rems from './rems/rems.svelte';
-</script>
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+    import './style.scss';
+    import {AppMode} from '$lib';
+    import Main from './main/main.svelte';
+    import Rems from './rems/rems.svelte';
 
-<Main />
-<Rems />
+    let mode: AppMode = AppMode.DEFAULT;
+</script>
+
+{#if mode === AppMode.REMS}
+    <Rems />
+{:else}
+    <Main />
+{/if}
 
 <style lang="scss">
-  p {
-    font-size: 30px;
-  }
 </style>
