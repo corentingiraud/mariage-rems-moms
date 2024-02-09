@@ -7,6 +7,6 @@
 
 <style lang="scss">
   .page {
-    background-color: #cccccc;
+    background-color: $gray;
   }
 </style>

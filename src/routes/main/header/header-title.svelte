@@ -1,10 +1,12 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
     export let label: string;
+    export let activeSectionId: string | null;
+    export let pageId: string | null;
     const dispatch = createEventDispatcher();
 </script>
 
-<div on:click={() => dispatch('click')} class="header-title">
+<div class:active="{activeSectionId === pageId}" on:click={() => dispatch('click', pageId)} class="header-title">
     <p class="header-title__label">{label}</p>
 </div>
 
@@ -18,12 +20,18 @@
       cursor: pointer;
       padding-left: 4px;
       padding-right: 4px;
+      transition: 300ms ease-in-out;
+      border-bottom: 2px solid transparent;
+
+      &.active {
+        color: $orange;
+        border-bottom: 2px solid $orange;
+      }
 
       &__label {
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             font-weight: bold;
-            color: #000;
         }
     }
 </style>
