@@ -3,5 +3,5 @@
     import Form from './form/form.svelte'
 </script>
 <div class="page" id={PAGE_IDS.REPONSE}>
-    <Form/>
+    <Form on:scrollToHome/>
 </div>

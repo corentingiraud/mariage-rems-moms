@@ -2,6 +2,9 @@
     import type {ResponseForm} from '$lib';
     import TextInput from './text-input.svelte';
     import TextAreaInput from './text-area-input.svelte';
+    import { createEventDispatcher } from 'svelte'
+
+    const dispatch = createEventDispatcher()
 
     let formValue: ResponseForm = {
         firstName: '',
@@ -12,6 +15,7 @@
     function onSubmit() {
         // TODO HERE CALL MAIL API
         resetFormValue();
+        dispatch('scrollToHome');
     }
 
     function resetFormValue(): void {
