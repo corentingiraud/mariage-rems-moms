@@ -27,7 +27,7 @@
     <JourJ />
     <Logements/>
     <ListeMariage/>
-    <Reponse />
+    <Reponse on:scrollToSection={(e) => scrollToSection(e.detail)} />
 </div>
 <style lang="scss">
     .pages {

@@ -14,7 +14,7 @@
             </div>
         {:else}
             <div class="response__content" out:fade={{duration: 100}}>
-                <Form  on:formSubmit={() => showValidatedScreen = true} />
+                <Form on:scrollToSection  on:formSubmit={() => showValidatedScreen = true} />
             </div>
         {/if}
     </div>

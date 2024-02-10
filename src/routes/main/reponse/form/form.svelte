@@ -3,6 +3,7 @@
     import TextInput from './text-input.svelte';
     import TextAreaInput from './text-area-input.svelte';
     import {createEventDispatcher} from "svelte";
+    import {PAGE_IDS} from "$lib";
     const dispatch = createEventDispatcher();
 
     let formValue: ResponseForm = {
@@ -15,6 +16,7 @@
         // TODO HERE CALL MAIL API
         resetFormValue();
         dispatch('formSubmit');
+        dispatch('scrollToSection', PAGE_IDS.REPONSE);
     }
 
     function resetFormValue(): void {
