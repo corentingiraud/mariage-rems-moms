@@ -46,6 +46,7 @@
 <style lang="scss">
 
     .header {
+      z-index: 2;
       position: sticky;
       top: 0;
       background-color: white;

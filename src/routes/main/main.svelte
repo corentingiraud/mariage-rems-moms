@@ -22,8 +22,15 @@
 </script>
 
 <Header {HEADER_HEIGHT} on:scrollToSection={(e) => scrollToSection(e.detail)} />
-<Home/>
-<JourJ />
-<Logements/>
-<ListeMariage/>
-<Reponse on:scrollToHome={() => scrollToSection(PAGE_IDS.HOME)}/>
+<div class="pages">
+    <Home/>
+    <JourJ />
+    <Logements/>
+    <ListeMariage/>
+    <Reponse />
+</div>
+<style lang="scss">
+    .pages {
+        position: relative;
+    }
+</style>
