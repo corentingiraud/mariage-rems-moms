@@ -2,7 +2,7 @@
     import {PAGE_IDS } from '$lib';
     import Form from './form/form.svelte'
     import Validated from './validated/validated.svelte';
-    import { slide, fade, fly } from 'svelte/transition';
+    import { fade, fly } from 'svelte/transition';
 
     let showValidatedScreen = false;
 </script>
