@@ -9,4 +9,8 @@
   .page {
     background-color: $gray;
   }
+
+  h1 {
+    font-family: BrendaHome, sans-serif;
+  }
 </style>

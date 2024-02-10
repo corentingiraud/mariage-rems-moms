@@ -9,4 +9,9 @@
     .page {
       background-color: $green;
     }
+
+
+    h1 {
+      font-family: CandaraLight, sans-serif;
+    }
 </style>

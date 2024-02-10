@@ -29,9 +29,8 @@
       }
 
       &__label {
-            font-family: 'Roboto', sans-serif;
+            font-family: CandaraBold, sans-serif;
             font-size: 16px;
-            font-weight: bold;
         }
     }
 </style>

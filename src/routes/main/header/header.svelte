@@ -51,6 +51,7 @@
 </div>
 
 <style lang="scss">
+
     .header {
       position: sticky;
       top: 0;

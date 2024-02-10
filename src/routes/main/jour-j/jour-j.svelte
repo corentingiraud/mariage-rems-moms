@@ -9,4 +9,8 @@
     .page {
       background-color: $green;
     }
+
+    h1 {
+      font-family: MinionPro, sans-serif;
+    }
 </style>
