@@ -10,3 +10,10 @@ export enum PAGE_IDS {
     LISTE_MARIAGE = 'liste-mariage',
     REPONSE = 'reponse',
 }
+
+export interface ResponseForm {
+    firstName: string;
+    lastName: string;
+    playlistComment: string;
+    comment: string;
+}

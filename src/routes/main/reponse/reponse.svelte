@@ -1,12 +1,7 @@
 <script>
     import {PAGE_IDS } from '$lib';
+    import Form from './form/form.svelte'
 </script>
 <div class="page" id={PAGE_IDS.REPONSE}>
-    <h1>Réponse</h1>
+    <Form/>
 </div>
-
-<style lang="scss">
-    .page {
-      background-color: $gray;
-    }
-</style>

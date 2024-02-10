@@ -10,7 +10,7 @@
     <p class="header-title__label">{label}</p>
 </div>
 
-<style lang="scss">
+<style itemscope lang="scss">
     :host {
         cursor: pointer;
     }
