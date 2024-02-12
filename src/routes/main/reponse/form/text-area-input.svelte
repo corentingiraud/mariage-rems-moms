@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+
 	export let label: string;
 	export let value: string;
 
@@ -7,8 +8,8 @@
 </script>
 
 <div class="textarea-input">
-    <label class="label">{label}</label>
-    <textarea bind:value class="textarea" on:change={() => dispatch('formChange', value)} rows="3"/>
+	<label class="label">{label}</label>
+	<textarea bind:value class="textarea" on:change={() => dispatch('formChange', value)} rows="3" />
 </div>
 
 <style lang="scss">
@@ -19,8 +20,8 @@
 		.label {
 			margin-left: 4px;
 			font-size: 18px;
-			font-family: Candara, sans-serif;
 			color: $green;
+			font-weight: bold;
 		}
 
 		.textarea {

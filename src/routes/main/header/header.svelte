@@ -72,19 +72,9 @@
 		position: sticky;
 		top: 0;
 		background-color: white;
-		border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
 		display: flex;
 		align-items: center;
 		gap: 8px;
-
-    .header {
-      z-index: 2;
-      position: sticky;
-      top: 0;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      gap: 8px;
 
 		&__container {
 			display: flex;
@@ -96,10 +86,9 @@
 			height: 100%;
 		}
 
-			img {
-				width: 24px;
-				height: 24px;
-			}
+		img {
+			width: 24px;
+			height: 24px;
 		}
 	}
 </style>

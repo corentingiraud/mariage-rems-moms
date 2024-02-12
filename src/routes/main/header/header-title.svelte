@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+
 	export let label: string;
 	export let activeSectionId: string | null;
 	export let pageId: string | null;
@@ -7,9 +8,9 @@
 </script>
 
 <div
+	class="header-title"
 	class:active={activeSectionId === pageId}
 	on:click={() => dispatch('scrollToSection', pageId)}
-	class="header-title"
 >
 	<p class="header-title__label">{label}</p>
 </div>
@@ -36,7 +37,7 @@
 		}
 
 		&__label {
-			font-family: Candara, sans-serif;
+			font-weight: bold;
 			font-size: 16px;
 			overflow: hidden;
 			white-space: nowrap;
