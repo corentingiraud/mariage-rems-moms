@@ -1,60 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mariage Remy & Morgane</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"
-      integrity="sha512-LGiXf+jHGTHcIybSsOWO3I/in+OObCkcEsWIZ7IyhzfD6RzD5qDUw2CK+JveuI7zTSEcDG//bIOvOpAJW2BWsg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.extensions.min.js"
-      integrity="sha512-i0+IGP2OBJG5Lioj9FaBr30x7Ci39dWQb8BhSd8J86p48OgctpfXXq0hG6cmCbCkKh4tn335pz9b3seChGFdKw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css"
-      integrity="sha512-otONSJGv1l0LjJXcgyqi2MeKXtnthkiXAleeQjFJOKYcVD5u+mOuPb7xCnlsb74Ld+N0ONbP7KYRmW2/OWrvaA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Tangerine&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="fullpage">
-      <div class="section home">
-        <h1>Remy De Gasquet - Morgane Bas</h1>
-        <h2>24 Août 2024</h1>
-        <img src="assets/remy-morgane.png" alt="Le best couple" width="200px">
-      </div>
-      <div class="section">
-        <h1>Le lieu</h1>
-        <div id="map"></div>
-      </div>
-      <div class="section">
-        <h1>Déroulement</h1>
-      </div>
-      <div class="section">Some section</div>
-      <div class="section">
-        <div class="slide">Slide 1</div>
-        <div class="slide">Slide 2</div>
-        <div class="slide">Slide 3</div>
-        <div class="slide">Slide 4</div>
-      </div>
-    </div>
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-      ({key: "AIzaSyAGGgOeENmPpvgG5FnFhApn15MGdRaajQI", v: "weekly"});</script>
-    <script src="script.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mariage Remy & Morgane</title>
+		<link rel="stylesheet" href="style.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"
+			integrity="sha512-LGiXf+jHGTHcIybSsOWO3I/in+OObCkcEsWIZ7IyhzfD6RzD5qDUw2CK+JveuI7zTSEcDG//bIOvOpAJW2BWsg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.extensions.min.js"
+			integrity="sha512-i0+IGP2OBJG5Lioj9FaBr30x7Ci39dWQb8BhSd8J86p48OgctpfXXq0hG6cmCbCkKh4tn335pz9b3seChGFdKw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css"
+			integrity="sha512-otONSJGv1l0LjJXcgyqi2MeKXtnthkiXAleeQjFJOKYcVD5u+mOuPb7xCnlsb74Ld+N0ONbP7KYRmW2/OWrvaA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Tangerine&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="fullpage">
+			<div class="section home">
+				<h1>Remy De Gasquet - Morgane Bas</h1>
+				<h2>24 Août 2024</h2>
+				<img src="assets/remy-morgane.png" alt="Le best couple" width="200px" />
+			</div>
+			<div class="section">
+				<h1>Le lieu</h1>
+				<div id="map"></div>
+			</div>
+			<div class="section">
+				<h1>Déroulement</h1>
+			</div>
+			<div class="section">Some section</div>
+			<div class="section">
+				<div class="slide">Slide 1</div>
+				<div class="slide">Slide 2</div>
+				<div class="slide">Slide 3</div>
+				<div class="slide">Slide 4</div>
+			</div>
+		</div>
+		<script>
+			((g) => {
+				var h,
+					a,
+					k,
+					p = 'The Google Maps JavaScript API',
+					c = 'google',
+					l = 'importLibrary',
+					q = '__ib__',
+					m = document,
+					b = window;
+				b = b[c] || (b[c] = {});
+				var d = b.maps || (b.maps = {}),
+					r = new Set(),
+					e = new URLSearchParams(),
+					u = () =>
+						h ||
+						(h = new Promise(async (f, n) => {
+							await (a = m.createElement('script'));
+							e.set('libraries', [...r] + '');
+							for (k in g)
+								e.set(
+									k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
+									g[k]
+								);
+							e.set('callback', c + '.maps.' + q);
+							a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+							d[q] = f;
+							a.onerror = () => (h = n(Error(p + ' could not load.')));
+							a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+							m.head.append(a);
+						}));
+				d[l]
+					? console.warn(p + ' only loads once. Ignoring:', g)
+					: (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+			})({ key: 'AIzaSyAGGgOeENmPpvgG5FnFhApn15MGdRaajQI', v: 'weekly' });
+		</script>
+		<script src="script.js"></script>
+	</body>
 </html>

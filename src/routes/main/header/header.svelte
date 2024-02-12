@@ -1,36 +1,40 @@
 <script lang="ts">
-    import HeaderTitle from './header-title.svelte'
-    import Icon from '$lib/assets/fake-icon.png';
-    import {PAGE_IDS} from '$lib';
-    import {onMount} from "svelte";
-    import {createEventDispatcher} from "svelte";
+	import HeaderTitle from './header-title.svelte';
+	import Icon from '$lib/assets/fake-icon.png';
+	import { PAGE_IDS } from '$lib';
+	import { onMount } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 
-    const dispatch = createEventDispatcher();
-    export let HEADER_HEIGHT: number;
-    let activeSectionId: PAGE_IDS | null = null;
+	const dispatch = createEventDispatcher();
+	export let HEADER_HEIGHT: number;
+	let activeSectionId: PAGE_IDS | null = null;
 
-    onMount(() => {
-        window.addEventListener('scroll', detectSection);
-    });
+	onMount(() => {
+		window.addEventListener('scroll', detectSection);
+	});
 
-    function detectSection(): boolean {
-        return Object.values(PAGE_IDS)?.some((pageId: PAGE_IDS) => {
-            const section: HTMLElement | null = document.getElementById(pageId);
-            if (isInSection(section)) {
-                if (activeSectionId !== pageId) {
-                    activeSectionId = pageId;
-                }
-                return true;
-            }
-            return false;
-        });
-    }
+	function detectSection(): boolean {
+		return Object.values(PAGE_IDS)?.some((pageId: PAGE_IDS) => {
+			const section: HTMLElement | null = document.getElementById(pageId);
+			if (isInSection(section)) {
+				if (activeSectionId !== pageId) {
+					activeSectionId = pageId;
+				}
+				return true;
+			}
+			return false;
+		});
+	}
 
-
-    function isInSection(element: HTMLElement | undefined | null): boolean {
-        return !!element && element.getBoundingClientRect().top < HEADER_HEIGHT + 10 && element.getBoundingClientRect().bottom > HEADER_HEIGHT + 5;
-    }
+	function isInSection(element: HTMLElement | undefined | null): boolean {
+		return (
+			!!element &&
+			element.getBoundingClientRect().top < HEADER_HEIGHT + 10 &&
+			element.getBoundingClientRect().bottom > HEADER_HEIGHT + 5
+		);
+	}
 </script>
+
 <div class="header" style="height: {HEADER_HEIGHT}px">
     <div class="icon" on:click={() => dispatch('scrollToSection', PAGE_IDS.HOME)}>
         <img src={Icon} alt="fake icon" />
@@ -44,6 +48,15 @@
 </div>
 
 <style lang="scss">
+	.header {
+		z-index: 2;
+		position: sticky;
+		top: 0;
+		background-color: white;
+		border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+		display: flex;
+		align-items: center;
+		gap: 8px;
 
     .header {
       z-index: 2;
@@ -64,14 +77,10 @@
         height: 100%;
       }
 
-      .icon {
-        padding-left: 6px;
-        cursor: pointer;
-
-        img {
-          width: 24px;
-          height: 24px;
-        }
-      }
-    }
+			img {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
 </style>
