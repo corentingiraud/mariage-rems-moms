@@ -15,5 +15,6 @@
 	.card {
 		background-color: red;
 		padding: 20px;
+		max-width: 400px;
 	}
 </style>

@@ -1,4 +1,4 @@
-export interface logement {
+export interface Logement {
 	name: string;
 	city: string;
 	location: {

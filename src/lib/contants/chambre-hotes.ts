@@ -1,3 +1,3 @@
-import type { logement } from '$lib/dto/logements.dto';
+import type { Logement } from '$lib/dto/logements.dto';
 
-export const CHAMBRE_HOTES: logement[] = [];
+export const CHAMBRE_HOTES: Logement[] = [];
