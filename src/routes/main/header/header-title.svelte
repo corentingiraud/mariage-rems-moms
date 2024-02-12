@@ -6,7 +6,7 @@
     const dispatch = createEventDispatcher();
 </script>
 
-<div class:active="{activeSectionId === pageId}" on:click={() => dispatch('click', pageId)} class="header-title">
+<div class:active="{activeSectionId === pageId}" on:click={() => dispatch('scrollToSection', pageId)} class="header-title">
     <p class="header-title__label">{label}</p>
 </div>
 
@@ -22,6 +22,9 @@
       padding-right: 4px;
       transition: 300ms ease-in-out;
       border-bottom: 2px solid transparent;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
 
       &.active {
         color: $orange;
@@ -31,6 +34,23 @@
       &__label {
             font-family: CandaraBold, sans-serif;
             font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            @media (min-width: 320px) and  (max-width: 380px) {
+                font-size: 14px;
+            }
+
+
+            @media (min-width: 300px) and  (max-width: 320px) {
+                font-size: 12px;
+            }
+
+
+            @media (max-width: 300px) {
+                font-size: 11px;
+            }
         }
     }
 </style>

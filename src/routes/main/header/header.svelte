@@ -36,10 +36,10 @@
         <img src={Icon} alt="fake icon" />
     </div>
     <div class="header__container">
-        <HeaderTitle {activeSectionId} on:click={(e) => dispatch('scrollToSection', e.detail)} pageId={PAGE_IDS.JOUR_J} label="Infos" />
-        <HeaderTitle {activeSectionId} on:click={(e) => dispatch('scrollToSection', e.detail)} pageId={PAGE_IDS.LOGEMENTS} label="Logements" />
-        <HeaderTitle {activeSectionId} on:click={(e) => dispatch('scrollToSection', e.detail)} pageId={PAGE_IDS.LISTE_MARIAGE} label="Liste mariage" />
-        <HeaderTitle {activeSectionId} on:click={(e) => dispatch('scrollToSection', e.detail)} pageId={PAGE_IDS.REPONSE} label="Réponse" />
+        <HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.JOUR_J} label="Infos" />
+        <HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.LOGEMENTS} label="Logements" />
+        <HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.LISTE_MARIAGE} label="Liste mariage" />
+        <HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.REPONSE} label="Réponse" />
     </div>
 </div>
 
@@ -50,7 +50,6 @@
       position: sticky;
       top: 0;
       background-color: white;
-      border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -61,6 +60,8 @@
         justify-content: space-evenly;
         flex-grow: 1;
         gap: 8px;
+        overflow: hidden;
+        height: 100%;
       }
 
       .icon {
