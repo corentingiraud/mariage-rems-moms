@@ -7,8 +7,8 @@
 </script>
 
 <div class="textarea-input">
-	<label class="label">{label}</label>
-	<textarea class="textarea" rows="3" on:change={() => dispatch('formChange', value)} bind:value />
+    <label class="label">{label}</label>
+    <textarea bind:value class="textarea" on:change={() => dispatch('formChange', value)} rows="3"/>
 </div>
 
 <style lang="scss">

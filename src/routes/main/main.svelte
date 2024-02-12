@@ -15,7 +15,8 @@
 			const offsetPosition: number =
 				section.getBoundingClientRect().top -
 				document.body.getBoundingClientRect().top -
-				HEADER_HEIGHT;
+				HEADER_HEIGHT +
+				1;
 			window.scrollTo({
 				top: offsetPosition,
 				behavior: 'smooth'
