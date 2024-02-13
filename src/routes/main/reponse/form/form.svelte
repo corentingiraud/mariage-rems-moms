@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { ResponseForm } from '$lib';
 	import { PAGE_IDS } from '$lib';
 	import TextInput from './text-input.svelte';
@@ -14,11 +14,14 @@
 		comment: ''
 	};
 
-	function onSubmit() {
+	async function onSubmit(): Promise<void> {
 		// TODO HERE CALL MAIL API
-		resetFormValue();
+		await new Promise<void>((resolve) => setTimeout(() => {
+			dispatch('scrollToSection', PAGE_IDS.REPONSE);
+			resolve();
+		}, 400));
 		dispatch('formSubmit');
-		dispatch('scrollToSection', PAGE_IDS.REPONSE);
+		resetFormValue();
 	}
 
 	function resetFormValue(): void {
@@ -31,56 +34,56 @@
 	}
 </script>
 
-<div class="form-container">
-	<form class="form" on:submit|preventDefault={onSubmit}>
+<div class='form-container'>
+	<form class='form' on:submit|preventDefault={onSubmit}>
 		<TextInput
-			label="Nom"
+			label='Nom'
 			on:formChange={(e) => (formValue.lastName = e.detail)}
 			value={formValue.lastName}
 		/>
 		<TextInput
-			label="Prénom"
+			label='Prénom'
 			on:formChange={(e) => (formValue.firstName = e.detail)}
 			value={formValue.firstName}
 		/>
 		<TextAreaInput
-			label="Le son qui doit absolument passer !"
+			label='Le son qui doit absolument passer !'
 			on:formChange={(e) => (formValue.playlistComment = e.detail)}
 			value={formValue.playlistComment}
 		/>
 		<TextAreaInput
-			label="Commentaire"
+			label='Commentaire'
 			on:formChange={(e) => (formValue.comment = e.detail)}
 			value={formValue.comment}
 		/>
-		<button class="form-button" type="submit">JE PARTICIPE</button>
+		<button class='form-button' type='submit'>JE PARTICIPE</button>
 	</form>
 </div>
 
-<style lang="scss">
-	.form-container {
-		display: flex;
-		justify-content: center;
-	}
+<style lang='scss'>
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
 
-	.form {
-		padding: 50px;
-		display: flex;
-		flex-direction: column;
-		gap: 32px;
-		max-width: 600px;
-		flex-grow: 1;
+  .form {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 600px;
+    flex-grow: 1;
 
-		.form-button {
-			cursor: pointer;
-			height: 48px;
-			border-radius: 4px;
-			background-color: $green;
-			color: white;
-			border: 1px solid $green;
-			font-size: 18px;
-			font-weight: bold;
-			text-align: center;
-		}
-	}
+    .form-button {
+      cursor: pointer;
+      height: 48px;
+      border-radius: 4px;
+      background-color: $green;
+      color: white;
+      border: 1px solid $green;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
 </style>

@@ -7,31 +7,31 @@
 	let showValidatedScreen = false;
 </script>
 
-<div class="page" id={PAGE_IDS.REPONSE}>
-	<div class="response">
+<div class='page' id={PAGE_IDS.REPONSE}>
+	<div class='response'>
 		{#if showValidatedScreen}
-			<div class="response__content" in:fly={{ delay: 200, x: 200, duration: 200 }}>
+			<div class='response__content' in:fly={{ delay: 300, x: 200, duration: 200 }}>
 				<Validated />
 			</div>
 		{:else}
-			<div class="response__content" out:fade={{ delay: 100, duration: 100 }}>
+			<div class='response__content' out:fade={{ delay: 200, duration: 100 }}>
 				<Form on:scrollToSection on:formSubmit={() => (showValidatedScreen = true)} />
 			</div>
 		{/if}
 	</div>
 </div>
 
-<style lang="scss">
-	.response {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
+<style lang='scss'>
+  .response {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-		&__content {
-			position: absolute;
-			top: 0;
-			width: 100%;
-		}
-	}
+    &__content {
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
 </style>
