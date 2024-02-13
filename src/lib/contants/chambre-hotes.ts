@@ -45,7 +45,7 @@ export const CHAMBRE_HOTES: Logement[] = [
 		}
 	},
 	{
-		name: 'L\'eglantyne',
+		name: "L'eglantyne",
 		city: 'La Chapelle de Guinchay',
 		distanceToCastle: '6min en voiture',
 		numberOfBeds: '8',

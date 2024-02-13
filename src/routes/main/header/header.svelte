@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HeaderTitle from './header-title.svelte';
 	import Icon from '$lib/assets/logo.svg';
-	import { PAGE_IDS } from '$lib';
+	import { PAGE_IDS, headerHeight } from '$lib';
 	import { onMount } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
 	import { get } from 'svelte/store';
@@ -9,7 +9,7 @@
 	import { pageHeight } from '$lib';
 
 	const dispatch = createEventDispatcher();
-	export let HEADER_HEIGHT: number;
+	const HEADER_HEIGHT = get(headerHeight);
 	let activeSectionId: PAGE_IDS | null = null;
 
 	onMount(() => {
@@ -45,24 +45,26 @@
 </script>
 
 <div class="header" style="height: {HEADER_HEIGHT}px">
-	<div class="icon" on:click={() => dispatch('scrollToSection', PAGE_IDS.HOME)}>
-		<img src={Icon} alt="fake icon" />
-	</div>
 	<div class="header__container">
-		<HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.JOUR_J} label="Infos" />
-		<HeaderTitle
-			{activeSectionId}
-			on:scrollToSection
-			pageId={PAGE_IDS.LOGEMENTS}
-			label="Logements"
-		/>
-		<HeaderTitle
-			{activeSectionId}
-			on:scrollToSection
-			pageId={PAGE_IDS.LISTE_MARIAGE}
-			label="Liste mariage"
-		/>
-		<HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.REPONSE} label="Réponse" />
+		<div class="icon" on:click={() => dispatch('scrollToSection', PAGE_IDS.HOME)}>
+			<img src={Icon} alt="fake icon" />
+		</div>
+		<div class="header__item-container">
+			<HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.JOUR_J} label="Infos" />
+			<HeaderTitle
+				{activeSectionId}
+				on:scrollToSection
+				pageId={PAGE_IDS.LOGEMENTS}
+				label="Logements"
+			/>
+			<HeaderTitle
+				{activeSectionId}
+				on:scrollToSection
+				pageId={PAGE_IDS.LISTE_MARIAGE}
+				label="Liste mariage"
+			/>
+			<HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.REPONSE} label="Réponse" />
+		</div>
 	</div>
 </div>
 
@@ -72,31 +74,34 @@
 		position: sticky;
 		top: 0;
 		background-color: $white;
-		display: flex;
-		align-items: center;
-		gap: 4px;
 
 		&__container {
 			display: flex;
-			align-items: center;
+			align-items: stretch;
+			gap: 4px;
+			max-width: 1200px;
+			margin: 0 auto;
+			height: 100%;
+		}
+
+		&__item-container {
+			display: flex;
+			align-items: stretch;
 			justify-content: space-evenly;
 			flex-grow: 1;
 			gap: 8px;
 			overflow: hidden;
-			height: 100%;
 		}
-
 
 		.icon {
 			height: 100%;
 			cursor: pointer;
 
-      img {
-        margin-top: 12%;
-        width: 24px;
-        margin-left: 12%;
-      }
+			img {
+				margin-top: 12%;
+				width: 24px;
+				margin-left: 12%;
+			}
 		}
-
 	}
 </style>

@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
 	import Header from './header/header.svelte';
 	import Home from './home/home.svelte';
 	import JourJ from './jour-j/jour-j.svelte';
@@ -26,8 +26,8 @@
 	}
 </script>
 
-<Header {HEADER_HEIGHT} on:scrollToSection={(e) => scrollToSection(e.detail)} />
-<div class='pages'>
+<Header on:scrollToSection={(e) => scrollToSection(e.detail)} />
+<div class="pages">
 	<Home on:scrollToSection={(e) => scrollToSection(e.detail)} />
 	<JourJ />
 	<Logements />
@@ -35,8 +35,8 @@
 	<Reponse on:scrollToSection={(e) => scrollToSection(e.detail)} />
 </div>
 
-<style lang='scss'>
-  .pages {
-    position: relative;
-  }
+<style lang="scss">
+	.pages {
+		position: relative;
+	}
 </style>

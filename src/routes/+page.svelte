@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
 	import './style.scss';
 	import { AppMode, headerHeight, pageHeight } from '$lib';
 	import Main from './main/main.svelte';
