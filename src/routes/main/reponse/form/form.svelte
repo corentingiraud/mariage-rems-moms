@@ -36,6 +36,7 @@
 
 <div class='form-container'>
 	<form class='form' on:submit|preventDefault={onSubmit}>
+		<h1 class='title'>RSVP</h1>
 		<TextInput
 			label='Nom'
 			on:formChange={(e) => (formValue.lastName = e.detail)}
@@ -74,12 +75,20 @@
     max-width: 600px;
     flex-grow: 1;
 
+    .title {
+      font-family: BrendaHome, sans-serif;
+      font-weight: bold;
+      font-size: 55px;
+      text-align: center;
+      color: $green;
+    }
+
     .form-button {
       cursor: pointer;
       height: 48px;
       border-radius: 4px;
       background-color: $green;
-      color: white;
+      color: $white;
       border: 1px solid $green;
       font-size: 18px;
       font-weight: bold;

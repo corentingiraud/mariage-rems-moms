@@ -6,6 +6,6 @@ export interface Logement {
 		lng: number;
 	};
 	distanceToCastle: string;
-	numberOfBeds: string;
+	numberOfBeds?: string;
 	link: string;
 }

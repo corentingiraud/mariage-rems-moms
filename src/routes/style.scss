@@ -1,13 +1,13 @@
 :root {
-	--page-height: 700px;
+  --page-height: 700px;
 }
 
 body {
-	margin: 0;
-	font-family: Candara, sans-serif;
-	font-weight: 400;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: Candara, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -16,10 +16,10 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
-	font-weight: 500;
+  margin: 0;
+  font-weight: 500;
 }
 
 .page {
-	height: var(--page-height);
+  min-height: var(--page-height);
 }

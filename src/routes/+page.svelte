@@ -1,6 +1,6 @@
-<script lang="ts">
+<script lang='ts'>
 	import './style.scss';
-	import { AppMode, pageHeight } from '$lib';
+	import { AppMode, headerHeight, pageHeight } from '$lib';
 	import Main from './main/main.svelte';
 	import Rems from './rems/rems.svelte';
 	import type { Readable, Writable } from 'svelte/store';
@@ -14,8 +14,9 @@
 	});
 
 	function definePageHeight(): void {
+		const headerHeightValue: number = get<number>(headerHeight as Readable<number>);
 		const screenHeight: number = window?.screen?.height || 700;
-		pageHeight.set(screenHeight);
+		pageHeight.set(screenHeight - headerHeightValue);
 	}
 
 	function setPageHeightCssVariable(pageHeight: Writable<number>): void {

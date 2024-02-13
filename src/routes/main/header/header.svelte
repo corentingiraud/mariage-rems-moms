@@ -1,6 +1,6 @@
 <script lang="ts">
 	import HeaderTitle from './header-title.svelte';
-	import Icon from '$lib/assets/fake-icon.png';
+	import Icon from '$lib/assets/logo.svg';
 	import { PAGE_IDS } from '$lib';
 	import { onMount } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
@@ -18,7 +18,7 @@
 
 	function detectSection(pageHeight: Writable<number>): boolean {
 		const pageHeightValue: number = get(pageHeight);
-		const pageProportionDetection: number = 0.75;
+		const pageProportionDetection: number = 0.7;
 		return Object.values(PAGE_IDS)?.some((pageId: PAGE_IDS) => {
 			const section: HTMLElement | null = document.getElementById(pageId);
 			if (isInSection(section, pageHeightValue, pageProportionDetection)) {
@@ -71,10 +71,10 @@
 		z-index: 2;
 		position: sticky;
 		top: 0;
-		background-color: white;
+		background-color: $white;
 		display: flex;
 		align-items: center;
-		gap: 8px;
+		gap: 4px;
 
 		&__container {
 			display: flex;
@@ -86,9 +86,17 @@
 			height: 100%;
 		}
 
-		img {
-			width: 24px;
-			height: 24px;
+
+		.icon {
+			height: 100%;
+			cursor: pointer;
+
+      img {
+        margin-top: 12%;
+        width: 24px;
+        margin-left: 12%;
+      }
 		}
+
 	}
 </style>

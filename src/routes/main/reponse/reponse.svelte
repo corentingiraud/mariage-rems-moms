@@ -22,16 +22,14 @@
 </div>
 
 <style lang='scss'>
+  .page {
+    min-height: unset;
+  }
+
   .response {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
-
-    &__content {
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
   }
 </style>
