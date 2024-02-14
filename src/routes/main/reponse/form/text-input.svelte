@@ -3,13 +3,20 @@
 
 	export let label: string;
 	export let value: string;
+	export let name: string;
 
 	const dispatch = createEventDispatcher();
 </script>
 
 <div class="text-input">
 	<label class="label">{label}</label>
-	<input bind:value class="input" on:change={() => dispatch('formChange', value)} type="text" />
+	<input
+		bind:value
+		class="input"
+		on:change={() => dispatch('formChange', value)}
+		type="text"
+		{name}
+	/>
 </div>
 
 <style lang="scss">

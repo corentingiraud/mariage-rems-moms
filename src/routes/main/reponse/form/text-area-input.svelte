@@ -3,13 +3,20 @@
 
 	export let label: string;
 	export let value: string;
+	export let name: string;
 
 	const dispatch = createEventDispatcher();
 </script>
 
 <div class="textarea-input">
 	<label class="label">{label}</label>
-	<textarea bind:value class="textarea" on:change={() => dispatch('formChange', value)} rows="3" />
+	<textarea
+		bind:value
+		class="textarea"
+		on:change={() => dispatch('formChange', value)}
+		rows="3"
+		{name}
+	/>
 </div>
 
 <style lang="scss">

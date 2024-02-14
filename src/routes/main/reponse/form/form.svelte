@@ -4,6 +4,8 @@
 	import TextInput from './text-input.svelte';
 	import TextAreaInput from './text-area-input.svelte';
 	import { createEventDispatcher } from 'svelte';
+	import { WEB_3_FORMS_API_KEY } from '$lib/contants';
+	import Spinner from './spinner.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -14,14 +16,28 @@
 		comment: ''
 	};
 
-	async function onSubmit(): Promise<void> {
-		// TODO HERE CALL MAIL API
-		await new Promise<void>((resolve) =>
-			setTimeout(() => {
-				dispatch('scrollToSection', PAGE_IDS.REPONSE);
-				resolve();
-			}, 400)
-		);
+	let loading = false;
+
+	async function onSubmit(submitEvent: SubmitEvent): Promise<void> {
+		dispatch('scrollToSection', PAGE_IDS.REPONSE);
+		loading = true;
+
+		if (submitEvent.currentTarget === null) {
+			return;
+		}
+		const formData = new FormData(submitEvent.currentTarget as HTMLFormElement);
+		const object = Object.fromEntries(formData);
+		const json = JSON.stringify(object);
+
+		const response = await fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json'
+			},
+			body: json
+		});
+		await response.json();
 		dispatch('formSubmit');
 		resetFormValue();
 	}
@@ -37,30 +53,41 @@
 </script>
 
 <div class="form-container">
-	<form class="form" on:submit|preventDefault={onSubmit}>
-		<h1 class="title">RSVP</h1>
-		<TextInput
-			label="Nom"
-			on:formChange={(e) => (formValue.lastName = e.detail)}
-			value={formValue.lastName}
-		/>
-		<TextInput
-			label="Prénom"
-			on:formChange={(e) => (formValue.firstName = e.detail)}
-			value={formValue.firstName}
-		/>
-		<TextAreaInput
-			label="Le son qui doit absolument passer !"
-			on:formChange={(e) => (formValue.playlistComment = e.detail)}
-			value={formValue.playlistComment}
-		/>
-		<TextAreaInput
-			label="Commentaire"
-			on:formChange={(e) => (formValue.comment = e.detail)}
-			value={formValue.comment}
-		/>
-		<button class="form-button" type="submit">JE PARTICIPE</button>
-	</form>
+	{#if loading}
+		<div class="spinner-container">
+			<Spinner size={50}></Spinner>
+		</div>
+	{:else}
+		<form class="form" on:submit|preventDefault={onSubmit}>
+			<h1 class="title">RSVP</h1>
+			<input type="hidden" name="access_key" value={WEB_3_FORMS_API_KEY} />
+			<TextInput
+				label="Nom"
+				name="Nom"
+				on:formChange={(e) => (formValue.lastName = e.detail)}
+				value={formValue.lastName}
+			/>
+			<TextInput
+				label="Prénom"
+				name="Prénom"
+				on:formChange={(e) => (formValue.firstName = e.detail)}
+				value={formValue.firstName}
+			/>
+			<TextAreaInput
+				label="Le son qui doit absolument passer !"
+				name="Le son qui doit absolument passer !"
+				on:formChange={(e) => (formValue.playlistComment = e.detail)}
+				value={formValue.playlistComment}
+			/>
+			<TextAreaInput
+				label="Commentaire"
+				name="Commentaire"
+				on:formChange={(e) => (formValue.comment = e.detail)}
+				value={formValue.comment}
+			/>
+			<button class="form-button" type="submit">JE PARTICIPE</button>
+		</form>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -96,5 +123,13 @@
 			font-weight: bold;
 			text-align: center;
 		}
+	}
+
+	.spinner-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 700px; // TODO UPDATE ;)
+		width: 100%;
 	}
 </style>
