@@ -10,7 +10,7 @@
 			title: logement.name,
 			subtitle: `${logement.city} - ${logement.distanceToCastle}`,
 			link: logement.link
-		};
+		} as ComponentProps<CardListItem>;
 	}
 
 	const mappedChambreHotes: ComponentProps<CardListItem>[] = CHAMBRE_HOTES.map(logementToCardItem);
@@ -45,6 +45,10 @@
 </div>
 
 <style lang="scss">
+	.page {
+		min-height: unset;
+	}
+
 	.card-container {
 		margin: 20px 10px 10px;
 		display: flex;

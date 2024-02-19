@@ -12,7 +12,9 @@
 			<img alt="Gift" src={Gift} />
 		</div>
 		<div class="button__wrapper">
-			<button class="button">Voir la liste</button>
+			<a href="https://www.millemercismariage.com/remyetmorgane/liste.html" target="_blank">
+				<button class="button">Voir la liste</button>
+			</a>
 		</div>
 	</div>
 </div>
@@ -28,6 +30,10 @@
 		justify-content: center;
 		padding-top: 25%;
 
+		@media (min-width: 768px) {
+			padding-top: 10%;
+		}
+
 		h1 {
 			color: $white;
 			font-size: 40px;
@@ -39,6 +45,10 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 10%;
+
+		@media (min-width: 768px) {
+			margin-top: 5%;
+		}
 
 		img {
 			width: 50%;
@@ -60,6 +70,12 @@
 			justify-content: center;
 			margin-top: 10%;
 			padding-bottom: 25%;
+			cursor: pointer;
+
+			@media (min-width: 768px) {
+				margin-top: 5%;
+				padding-bottom: 10%;
+			}
 		}
 	}
 </style>

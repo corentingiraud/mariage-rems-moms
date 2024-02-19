@@ -18,7 +18,7 @@
 		border-radius: 12px;
 		background-color: $green-light;
 		padding: 20px;
-		max-width: 400px;
+		max-width: 800px;
 
 		&.secondary {
 			background-color: $green;

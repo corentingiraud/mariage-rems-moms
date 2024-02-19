@@ -25,18 +25,31 @@
 		&__content {
 			color: $green;
 
+			@media (min-width: 768px) {
+				display: flex;
+				gap: 8px;
+			}
+
 			&.secondary {
 				color: $white;
 			}
 
 			&__title {
 				font-size: 16px;
+
+				@media (min-width: 768px) {
+					font-size: 20px;
+				}
 			}
 
 			&__subtitle {
 				font-weight: 400;
 				font-style: italic;
 				font-size: 14px;
+
+				@media (min-width: 768px) {
+					font-size: 18px;
+				}
 			}
 		}
 
@@ -51,6 +64,11 @@
 				border-radius: 200px;
 				cursor: pointer;
 				font-size: 11px;
+
+				@media (min-width: 768px) {
+					padding: 6px 12px;
+					font-size: 14px;
+				}
 
 				&.secondary {
 					border: 1px solid white;

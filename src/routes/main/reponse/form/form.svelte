@@ -55,7 +55,7 @@
 <div class="form-container">
 	{#if loading}
 		<div class="spinner-container">
-			<Spinner size={50}></Spinner>
+			<Spinner size={100}></Spinner>
 		</div>
 	{:else}
 		<form class="form" on:submit|preventDefault={onSubmit}>
