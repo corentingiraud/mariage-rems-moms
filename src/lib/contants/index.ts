@@ -6,3 +6,5 @@
 
 // To create a new API_KEY, follow https://web3forms.com/#start
 export const WEB_3_FORMS_API_KEY = 'invalid';
+
+export const PUBLIC_GOOGLE_MAPS_API_KEY = 'AIzaSyAGGgOeENmPpvgG5FnFhApn15MGdRaajQI';

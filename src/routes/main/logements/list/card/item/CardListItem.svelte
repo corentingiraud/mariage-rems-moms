@@ -2,7 +2,7 @@
 	export let title: string;
 	export let subtitle: string;
 	export let link: string;
-	export let secondaryType: boolean;
+	export let secondaryType: boolean | undefined = false;
 </script>
 
 <div class="card-list-item">
