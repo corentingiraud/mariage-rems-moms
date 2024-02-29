@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { AUBERGES, CHAMBRE_HOTES, GITES, HOTELS, PAGE_IDS } from '$lib';
-	import type { Logement } from '$lib/dto';
-	import Card from './card/Card.svelte';
-	import CardListItem from './card/item/CardListItem.svelte';
-	import type { ComponentProps } from 'svelte';
+	import { AUBERGES, CHAMBRE_HOTES, GITES, HOTELS, PAGE_IDS } from "$lib";
+	import type { Logement } from "$lib/dto";
+	import Card from "./card/Card.svelte";
+	import CardListItem from "./card/item/CardListItem.svelte";
+	import type { ComponentProps } from "svelte";
 
 	function logementToCardItem(logement: Logement): ComponentProps<CardListItem> {
 		return {

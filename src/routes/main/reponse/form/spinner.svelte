@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let size = 25;
 	export let speed = 750;
-	export let color = 'rgba(156,207,157,1)';
+	export let color = "rgba(156,207,157,1)";
 	export let thickness = 2;
 	export let gap = 40;
 	export let radius = 10;

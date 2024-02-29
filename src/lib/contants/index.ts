@@ -5,4 +5,4 @@
 // export const WEB_3_FORMS_API_KEY="fe40b107-9857-4eb5-bf8b-068b66ff1edd"
 
 // To create a new API_KEY, follow https://web3forms.com/#start
-export const WEB_3_FORMS_API_KEY = 'invalid';
+export const WEB_3_FORMS_API_KEY = "invalid";

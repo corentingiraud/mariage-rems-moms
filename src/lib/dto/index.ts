@@ -1,2 +1,2 @@
-export * from './dto';
-export * from './logements.dto';
+export * from "./dto";
+export * from "./logements.dto";

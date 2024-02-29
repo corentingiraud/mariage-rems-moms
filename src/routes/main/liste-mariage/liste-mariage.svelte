@@ -1,6 +1,6 @@
 <script>
-	import { PAGE_IDS } from '$lib';
-	import Gift from '$lib/assets/white-gift.svg';
+	import { PAGE_IDS } from "$lib";
+	import Gift from "$lib/assets/white-gift.svg";
 </script>
 
 <div class="page-container--colorized">

@@ -1,8 +1,8 @@
 <script>
-	import { PAGE_IDS } from '$lib';
-	import Form from './form/form.svelte';
-	import Validated from './validated/validated.svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { PAGE_IDS } from "$lib";
+	import Form from "./form/form.svelte";
+	import Validated from "./validated/validated.svelte";
+	import { fade, fly } from "svelte/transition";
 
 	let showValidatedScreen = false;
 </script>

@@ -1,19 +1,19 @@
 <script lang="ts">
-	import HeaderTitle from './header-title.svelte';
-	import Icon from '$lib/assets/logo.svg';
-	import { PAGE_IDS, headerHeight } from '$lib';
-	import { onMount } from 'svelte';
-	import { createEventDispatcher } from 'svelte';
-	import { get } from 'svelte/store';
-	import type { Writable } from 'svelte/store';
-	import { pageHeight } from '$lib';
+	import HeaderTitle from "./header-title.svelte";
+	import Icon from "$lib/assets/logo.svg";
+	import { PAGE_IDS, headerHeight } from "$lib";
+	import { onMount } from "svelte";
+	import { createEventDispatcher } from "svelte";
+	import { get } from "svelte/store";
+	import type { Writable } from "svelte/store";
+	import { pageHeight } from "$lib";
 
 	const dispatch = createEventDispatcher();
 	const HEADER_HEIGHT = get(headerHeight);
 	let activeSectionId: PAGE_IDS | null = null;
 
 	onMount(() => {
-		window.addEventListener('scroll', () => detectSection(pageHeight));
+		window.addEventListener("scroll", () => detectSection(pageHeight));
 	});
 
 	function detectSection(pageHeight: Writable<number>): boolean {
@@ -46,7 +46,7 @@
 
 <div class="header" style="height: {HEADER_HEIGHT}px">
 	<div class="header__container">
-		<div class="icon" on:click={() => dispatch('scrollToSection', PAGE_IDS.HOME)}>
+		<div class="icon" on:click={() => dispatch("scrollToSection", PAGE_IDS.HOME)}>
 			<img src={Icon} alt="fake icon" />
 		</div>
 		<div class="header__item-container">
