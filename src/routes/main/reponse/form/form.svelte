@@ -1,25 +1,25 @@
 <script lang="ts">
-	import type { ResponseForm } from '$lib';
-	import { PAGE_IDS } from '$lib';
-	import TextInput from './text-input.svelte';
-	import TextAreaInput from './text-area-input.svelte';
-	import { createEventDispatcher } from 'svelte';
-	import { WEB_3_FORMS_API_KEY } from '$lib/contants';
-	import Spinner from './spinner.svelte';
+	import type { ResponseForm } from "$lib";
+	import { PAGE_IDS } from "$lib";
+	import TextInput from "./text-input.svelte";
+	import TextAreaInput from "./text-area-input.svelte";
+	import { createEventDispatcher } from "svelte";
+	import { WEB_3_FORMS_API_KEY } from "$lib/contants";
+	import Spinner from "./spinner.svelte";
 
 	const dispatch = createEventDispatcher();
 
 	let formValue: ResponseForm = {
-		firstName: '',
-		lastName: '',
-		playlistComment: '',
-		comment: ''
+		firstName: "",
+		lastName: "",
+		playlistComment: "",
+		comment: ""
 	};
 
 	let loading = false;
 
 	async function onSubmit(submitEvent: SubmitEvent): Promise<void> {
-		dispatch('scrollToSection', PAGE_IDS.REPONSE);
+		dispatch("scrollToSection", PAGE_IDS.REPONSE);
 		loading = true;
 
 		if (submitEvent.currentTarget === null) {
@@ -29,25 +29,25 @@
 		const object = Object.fromEntries(formData);
 		const json = JSON.stringify(object);
 
-		const response = await fetch('https://api.web3forms.com/submit', {
-			method: 'POST',
+		const response = await fetch("https://api.web3forms.com/submit", {
+			method: "POST",
 			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json'
+				"Content-Type": "application/json",
+				Accept: "application/json"
 			},
 			body: json
 		});
 		await response.json();
-		dispatch('formSubmit');
+		dispatch("formSubmit");
 		resetFormValue();
 	}
 
 	function resetFormValue(): void {
 		formValue = {
-			firstName: '',
-			lastName: '',
-			playlistComment: '',
-			comment: ''
+			firstName: "",
+			lastName: "",
+			playlistComment: "",
+			comment: ""
 		};
 	}
 </script>

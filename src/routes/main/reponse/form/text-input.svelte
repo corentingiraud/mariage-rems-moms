@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher } from "svelte";
 
 	export let label: string;
 	export let value: string;
@@ -13,7 +13,7 @@
 	<input
 		bind:value
 		class="input"
-		on:change={() => dispatch('formChange', value)}
+		on:change={() => dispatch("formChange", value)}
 		type="text"
 		{name}
 	/>

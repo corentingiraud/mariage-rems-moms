@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher } from "svelte";
 
 	export let label: string;
 	export let value: string;
@@ -13,7 +13,7 @@
 	<textarea
 		bind:value
 		class="textarea"
-		on:change={() => dispatch('formChange', value)}
+		on:change={() => dispatch("formChange", value)}
 		rows="3"
 		{name}
 	/>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ValidatedIcon from '$lib/assets/email-sent.png';
+	import ValidatedIcon from "$lib/assets/email-sent.png";
 </script>
 
 <div class="validated-screen">

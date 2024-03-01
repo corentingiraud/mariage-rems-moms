@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-cloudflare';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from "@sveltejs/adapter-cloudflare";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +8,7 @@ const config = {
 	preprocess: vitePreprocess(),
 	onwarn: (warning, handler) => {
 		// suppress warnings on `vite dev` and `vite build`; but even without this, things still work
-		if (warning.code.startsWith('a11y')) return;
+		if (warning.code.startsWith("a11y")) return;
 		handler(warning);
 	},
 	kit: {

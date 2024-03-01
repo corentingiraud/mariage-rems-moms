@@ -1,11 +1,11 @@
 <script lang="ts">
-	import './style.scss';
-	import { AppMode, headerHeight, pageHeight } from '$lib';
-	import Main from './main/main.svelte';
-	import Rems from './rems/rems.svelte';
-	import type { Readable, Writable } from 'svelte/store';
-	import { get } from 'svelte/store';
-	import { onMount } from 'svelte';
+	import "./style.scss";
+	import { AppMode, headerHeight, pageHeight } from "$lib";
+	import Main from "./main/main.svelte";
+	import Rems from "./rems/rems.svelte";
+	import type { Readable, Writable } from "svelte/store";
+	import { get } from "svelte/store";
+	import { onMount } from "svelte";
 
 	let mode: AppMode = AppMode.DEFAULT;
 	onMount(() => {
@@ -21,8 +21,8 @@
 
 	function setPageHeightCssVariable(pageHeight: Writable<number>): void {
 		const pageHeightValue: number = get<number>(pageHeight as Readable<number>);
-		(document?.querySelector(':root') as HTMLStyleElement | null)?.style?.setProperty(
-			'--page-height',
+		(document?.querySelector(":root") as HTMLStyleElement | null)?.style?.setProperty(
+			"--page-height",
 			`${pageHeightValue}px`
 		);
 	}
