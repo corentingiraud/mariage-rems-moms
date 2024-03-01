@@ -5,11 +5,7 @@
 	export let active: Boolean = false;
 </script>
 
-<div
-	class="header-title"
-	class:active={active}
-	on:click
->
+<div class="header-title" class:active on:click>
 	<p class="header-title__label">{label}</p>
 </div>
 

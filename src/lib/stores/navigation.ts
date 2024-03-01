@@ -7,8 +7,8 @@ export const headerHeight: Writable<number> = writable(50);
 export const currentPageHTMLId: Writable<string> = writable();
 
 export function scrollToPageId(newHTMLId: string): void {
-  if (!browser) return;
-	 
+	if (!browser) return;
+
 	const section: HTMLElement | null = document.getElementById(newHTMLId);
 	if (section) {
 		const offsetPosition: number =

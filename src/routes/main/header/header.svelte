@@ -54,22 +54,22 @@
 			<HeaderTitle
 				active={activeSectionId === PAGE_IDS.JOUR_J}
 				label="Infos"
-				on:click={() => (scrollToPageId(PAGE_IDS.JOUR_J))}
+				on:click={() => scrollToPageId(PAGE_IDS.JOUR_J)}
 			/>
 			<HeaderTitle
 				active={activeSectionId === PAGE_IDS.LOGEMENTS}
 				label="Logements"
-				on:click={() => (scrollToPageId(PAGE_IDS.LOGEMENTS))}
+				on:click={() => scrollToPageId(PAGE_IDS.LOGEMENTS)}
 			/>
 			<HeaderTitle
 				active={activeSectionId === PAGE_IDS.LISTE_MARIAGE}
 				label="Liste mariage"
-				on:click={() => (scrollToPageId(PAGE_IDS.LISTE_MARIAGE))}
+				on:click={() => scrollToPageId(PAGE_IDS.LISTE_MARIAGE)}
 			/>
 			<HeaderTitle
 				active={activeSectionId === PAGE_IDS.REPONSE}
 				label="Réponse"
-				on:click={() => (scrollToPageId(PAGE_IDS.REPONSE))}
+				on:click={() => scrollToPageId(PAGE_IDS.REPONSE)}
 			/>
 		</div>
 	</div>
