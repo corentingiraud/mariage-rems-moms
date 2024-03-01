@@ -1,10 +1,14 @@
 <script lang="ts">
-	import type { View } from '../utils';
-	import SwitcherItem from './switcher-item.svelte';
+	import { currentViewId } from "$lib/stores/logement";
+	import { get } from "svelte/store";
+	import type { LogementView } from "../utils";
+	import SwitcherItem from "./switcher-item.svelte";
 
-	export let activeViewId: number;
 	export let marginBottom: number;
-	export let views: View[];
+	export let views: LogementView[];
+
+	let activeViewId: number = get(currentViewId);
+	currentViewId.subscribe((newViewId) => (activeViewId = newViewId));
 </script>
 
 <ul style="--margin-bottom: {marginBottom}px">
@@ -13,7 +17,7 @@
 			{label}
 			isActive={activeViewId === id}
 			on:click={() => {
-				activeViewId = id;
+				currentViewId.set(id);
 			}}
 		></SwitcherItem>
 	{/each}
@@ -28,5 +32,6 @@
 		padding: 0;
 		margin-bottom: var(--margin-bottom);
 		transition: margin 500ms ease-in-out;
+		position: sticky;
 	}
 </style>

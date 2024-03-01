@@ -8,6 +8,7 @@ export interface Lieu {
 	city: string;
 	location: LatLng;
 	distanceToCastle: string;
+	faIcon: string;
 }
 
 export interface Logement extends Lieu {

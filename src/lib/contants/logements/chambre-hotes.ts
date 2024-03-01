@@ -10,7 +10,8 @@ export const CHAMBRE_HOTES: Logement[] = [
 		location: {
 			lat: 46.2338171,
 			lng: 4.7724174
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "Les chambres chez Estelle",
@@ -21,7 +22,8 @@ export const CHAMBRE_HOTES: Logement[] = [
 		location: {
 			lat: 46.2339109,
 			lng: 4.7721318
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "Casa Altea",
@@ -31,7 +33,8 @@ export const CHAMBRE_HOTES: Logement[] = [
 		location: {
 			lat: 46.2136532,
 			lng: 4.7672774
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "La Côte des blancs",
@@ -42,7 +45,8 @@ export const CHAMBRE_HOTES: Logement[] = [
 		location: {
 			lat: 46.2631387,
 			lng: 4.7663036
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "L'eglantyne",
@@ -53,7 +57,8 @@ export const CHAMBRE_HOTES: Logement[] = [
 		location: {
 			lat: 46.2165358,
 			lng: 4.7370312
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "La maison du Hérisson",
@@ -64,6 +69,7 @@ export const CHAMBRE_HOTES: Logement[] = [
 		location: {
 			lat: 46.2792226,
 			lng: 4.74221
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	}
 ];

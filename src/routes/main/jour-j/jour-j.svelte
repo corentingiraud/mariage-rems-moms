@@ -3,7 +3,7 @@
 	import Chemin from "$lib/assets/chemin-vert.svg";
 </script>
 
-<div class="page-container--colorized">
+<div class="page-container">
 	<div class="page" id={PAGE_IDS.JOUR_J}>
 		<div class="chemin">
 			<img class="chemin__img" src={Chemin} />
@@ -134,9 +134,5 @@
 				justify-content: space-between;
 			}
 		}
-	}
-
-	.italic {
-		font-style: italic;
 	}
 </style>

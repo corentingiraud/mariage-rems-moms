@@ -20,12 +20,30 @@ h6 {
 	font-weight: 500;
 }
 
+.page-container {
+	margin-bottom: 70px;
+}
+
 .page-container--colorized {
 	background-color: $green;
+	padding-top: 40px;
+
+	h1.page-title {
+		color: white
+	}
 }
 
 .page {
 	min-height: var(--page-height);
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+h1.page-title {
+	font-family: BrendaHome, sans-serif;
+	margin-bottom: 60px;
+	text-align: center;
+	color: $green;
+	font-weight: bold;
+	font-size: 55px;
 }

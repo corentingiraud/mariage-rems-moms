@@ -10,7 +10,8 @@ export const HOTELS: Logement[] = [
 		location: {
 			lat: 46.2386191,
 			lng: 4.7149669
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "Les maritonnes",
@@ -21,6 +22,7 @@ export const HOTELS: Logement[] = [
 		location: {
 			lat: 46.1756164,
 			lng: 4.737661
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	}
 ];

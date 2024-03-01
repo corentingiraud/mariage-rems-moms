@@ -1,9 +1,6 @@
 <script lang="ts">
-	import { PAGE_IDS } from '$lib';
-	import Vigne from '$lib/assets/vigne.jpg';
-	import { createEventDispatcher } from 'svelte';
-
-	const dispatch = createEventDispatcher();
+	import { PAGE_IDS, scrollToPageId } from "$lib";
+	import Vigne from "$lib/assets/vigne.jpg";
 </script>
 
 <div class="page" id={PAGE_IDS.HOME}>
@@ -15,7 +12,7 @@
 		<h1 class="subtitle">Samedi 24 Août 2024</h1>
 		<h1 class="subtitle">Château de Beauchamp</h1>
 		<div class="button-wrapper">
-			<button class="info-button" on:click={() => dispatch('scrollToSection', PAGE_IDS.JOUR_J)}>
+			<button class="info-button" on:click={() => scrollToPageId(PAGE_IDS.JOUR_J)}>
 				<h3>Infos Jour J</h3>
 			</button>
 		</div>

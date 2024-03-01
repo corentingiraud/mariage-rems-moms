@@ -3,11 +3,9 @@
 	import Gift from "$lib/assets/white-gift.svg";
 </script>
 
-<div class="page-container--colorized">
+<div class="page-container page-container--colorized">
 	<div class="page" id={PAGE_IDS.LISTE_MARIAGE}>
-		<div class="title">
-			<h1>Liste de mariage</h1>
-		</div>
+		<h1 class="page-title">Liste de mariage</h1>
 		<div class="gift">
 			<img alt="Gift" src={Gift} />
 		</div>
@@ -23,22 +21,6 @@
 	.page {
 		min-height: unset;
 		background-color: $green;
-	}
-
-	.title {
-		display: flex;
-		justify-content: center;
-		padding-top: 25%;
-
-		@media (min-width: 768px) {
-			padding-top: 10%;
-		}
-
-		h1 {
-			color: $white;
-			font-size: 40px;
-			font-weight: bold;
-		}
 	}
 
 	.gift {

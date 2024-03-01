@@ -11,7 +11,8 @@ export const AUBERGES: Logement[] = [
 		location: {
 			lat: 46.2233026,
 			lng: 4.7068584
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	AUBERGE_DU_PARADIS
 ];
