@@ -15,7 +15,7 @@
 			<div class="chemin__text chemin__vin-honneur align-right">
 				<h4>18h - Vin d'honneur</h4>
 				<h5>Chateau de Beauchamp</h5>
-				<h5>Crêches-sur-Saône</h5>
+				<h5>La-Chapelle-de-Guinchay</h5>
 			</div>
 			<div class="chemin__text chemin__diner">
 				<h4>20h30 - Dîner</h4>
