@@ -1,12 +1,13 @@
 <script lang="ts">
 	import HeaderTitle from "./header-title.svelte";
 	import Icon from "$lib/assets/logo.svg";
-	import { PAGE_IDS, headerHeight } from "$lib";
+	import { PAGE_IDS, currentPageHTMLId, headerHeight, scrollToPageId } from "$lib";
 	import { onMount } from "svelte";
 	import { createEventDispatcher } from "svelte";
 	import { get } from "svelte/store";
 	import type { Writable } from "svelte/store";
 	import { pageHeight } from "$lib";
+	import JourJ from "../jour-j/jour-j.svelte";
 
 	const dispatch = createEventDispatcher();
 	const HEADER_HEIGHT = get(headerHeight);
@@ -46,24 +47,30 @@
 
 <div class="header" style="height: {HEADER_HEIGHT}px">
 	<div class="header__container">
-		<div class="icon" on:click={() => dispatch("scrollToSection", PAGE_IDS.HOME)}>
+		<div class="icon" on:click={() => scrollToPageId(PAGE_IDS.HOME)}>
 			<img src={Icon} alt="fake icon" />
 		</div>
 		<div class="header__item-container">
-			<HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.JOUR_J} label="Infos" />
 			<HeaderTitle
-				{activeSectionId}
-				on:scrollToSection
-				pageId={PAGE_IDS.LOGEMENTS}
+				active={activeSectionId === PAGE_IDS.JOUR_J}
+				label="Infos"
+				on:click={() => scrollToPageId(PAGE_IDS.JOUR_J)}
+			/>
+			<HeaderTitle
+				active={activeSectionId === PAGE_IDS.LOGEMENTS}
 				label="Logements"
+				on:click={() => scrollToPageId(PAGE_IDS.LOGEMENTS)}
 			/>
 			<HeaderTitle
-				{activeSectionId}
-				on:scrollToSection
-				pageId={PAGE_IDS.LISTE_MARIAGE}
+				active={activeSectionId === PAGE_IDS.LISTE_MARIAGE}
 				label="Liste mariage"
+				on:click={() => scrollToPageId(PAGE_IDS.LISTE_MARIAGE)}
 			/>
-			<HeaderTitle {activeSectionId} on:scrollToSection pageId={PAGE_IDS.REPONSE} label="Réponse" />
+			<HeaderTitle
+				active={activeSectionId === PAGE_IDS.REPONSE}
+				label="Réponse"
+				on:click={() => scrollToPageId(PAGE_IDS.REPONSE)}
+			/>
 		</div>
 	</div>
 </div>

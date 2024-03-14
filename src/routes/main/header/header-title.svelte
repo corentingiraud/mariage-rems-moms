@@ -1,17 +1,11 @@
 <script lang="ts">
-	import { createEventDispatcher } from "svelte";
+	import { currentPageHTMLId } from "$lib";
 
 	export let label: string;
-	export let activeSectionId: string | null;
-	export let pageId: string | null;
-	const dispatch = createEventDispatcher();
+	export let active: Boolean = false;
 </script>
 
-<div
-	class="header-title"
-	class:active={activeSectionId === pageId}
-	on:click={() => dispatch("scrollToSection", pageId)}
->
+<div class="header-title" class:active on:click>
 	<p class="header-title__label">{label}</p>
 </div>
 

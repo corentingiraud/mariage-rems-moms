@@ -17,7 +17,7 @@
 		width: 80%;
 		border-radius: 12px;
 		background-color: $green-light;
-		padding: 20px;
+		padding: 40px 30px;
 		max-width: 800px;
 
 		&.secondary {
@@ -37,7 +37,7 @@
 			font-weight: bold;
 			color: $green;
 			font-size: 32px;
-			margin-bottom: 8px;
+			margin-bottom: 25px;
 
 			&.secondary {
 				color: $white;
@@ -47,7 +47,7 @@
 		&__content {
 			display: flex;
 			flex-direction: column;
-			gap: 4px;
+			gap: 15px;
 		}
 	}
 </style>

@@ -11,7 +11,8 @@ export const GITES: Logement[] = [
 		location: {
 			lat: 46.2208692,
 			lng: 4.7533327
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "Le moulin de St Jacques",
@@ -22,7 +23,8 @@ export const GITES: Logement[] = [
 		location: {
 			lat: 46.2503855,
 			lng: 4.5823487
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	{
 		name: "Gite des moriers",
@@ -33,7 +35,8 @@ export const GITES: Logement[] = [
 		location: {
 			lat: 46.2005559,
 			lng: 4.7145315
-		}
+		},
+		faIcon: "fa-solid fa-bed"
 	},
 	AUBERGE_DU_PARADIS
 ];

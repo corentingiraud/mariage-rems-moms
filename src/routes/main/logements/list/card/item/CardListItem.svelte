@@ -1,8 +1,12 @@
 <script lang="ts">
+	import { createEventDispatcher } from "svelte";
+
 	export let title: string;
 	export let subtitle: string;
 	export let link: string;
-	export let secondaryType: boolean = false;
+	export let secondaryType: boolean | undefined = false;
+
+	const dispatch = createEventDispatcher();
 </script>
 
 <div class="card-list-item">
@@ -10,20 +14,31 @@
 		<h3 class="card-list-item__content__title">{title}</h3>
 		<h4 class="card-list-item__content__subtitle">{subtitle}</h4>
 	</div>
-	<a class="card-list-item__cta" href={link} target="_blank">
-		<button class="card-list-item__cta__button" class:secondary={secondaryType}> Voir</button>
-	</a>
+	<div class="card-list-item__cta">
+		<a href={link} target="_blank">
+			<button class="card-list-item__cta__button" class:secondary={secondaryType}>
+				<i class="fa-solid fa-globe"></i>Site internet
+			</button>
+		</a>
+		<button
+			class="card-list-item__cta__button"
+			class:secondary={secondaryType}
+			on:click={() => dispatch("showMap")}
+		>
+			<i class="fa-regular fa-map"></i>Carte
+		</button>
+	</div>
 </div>
 
 <style lang="scss">
 	.card-list-item {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 8px;
+		flex-direction: column;
+		margin-bottom: 10px;
 
 		&__content {
 			color: $green;
+			margin-bottom: 10px;
 
 			@media (min-width: 768px) {
 				display: flex;
@@ -54,16 +69,23 @@
 		}
 
 		&__cta {
+			display: flex;
+			justify-content: end;
+			gap: 7px;
 			text-decoration: none;
 
 			&__button {
-				background-color: $green;
-				color: $white;
+				background-color: $green-light;
+				color: $green;
 				padding: 5px 10px;
-				border: none;
+				border: 1px solid $green;
 				border-radius: 200px;
 				cursor: pointer;
 				font-size: 11px;
+
+				i {
+					margin-right: 8px;
+				}
 
 				@media (min-width: 768px) {
 					padding: 6px 12px;
