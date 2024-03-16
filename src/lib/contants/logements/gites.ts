@@ -7,6 +7,8 @@ export const GITES: Logement[] = [
 		city: "La Chapelle de Guinchay",
 		distanceToCastle: "3min en voiture",
 		link: "https://www.domaine-bel-avenir.com/tourisme.php",
+		mapsLink:
+			"https://www.google.fr/maps/search/?api=1&query=Domaine+Bel+Avenir+-+Alain+Dardanelli",
 		numberOfBeds: "6",
 		location: {
 			lat: 46.2208692,
@@ -19,6 +21,8 @@ export const GITES: Logement[] = [
 		city: "Saint Jacques des Arrêts",
 		distanceToCastle: "26min en voiture",
 		link: "https://www.domaine-bel-avenir.com/tourisme.php",
+		mapsLink:
+			"https://www.google.fr/maps/search/?api=1&query=Le+moulin+de+Saint-Jacques+%2F+Maison+et+Table+d'h%C3%B4tes",
 		numberOfBeds: "13",
 		location: {
 			lat: 46.2503855,

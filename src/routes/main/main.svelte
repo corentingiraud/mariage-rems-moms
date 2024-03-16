@@ -11,9 +11,9 @@
 <div class="pages">
 	<Home />
 	<JourJ />
-	<Logements />
 	<ListeMariage />
 	<Reponse />
+	<Logements />
 </div>
 
 <style lang="scss">

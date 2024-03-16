@@ -5,7 +5,7 @@
 <div class="validated-screen">
 	<div class="validated-screen__content">
 		<img alt="Email sent" class="validated-screen__content__icon" src={ValidatedIcon} />
-		<h2 class="validated-screen__content__title">Merci pour ta confirmation de participation !</h2>
+		<h2 class="validated-screen__content__title">Merci, ta participation a été envoyée !</h2>
 	</div>
 </div>
 

@@ -4,6 +4,7 @@
 	export let title: string;
 	export let subtitle: string;
 	export let link: string;
+	export let mapsLink: string | undefined;
 	export let secondaryType: boolean | undefined = false;
 
 	const dispatch = createEventDispatcher();
@@ -15,9 +16,16 @@
 		<h4 class="card-list-item__content__subtitle">{subtitle}</h4>
 	</div>
 	<div class="card-list-item__cta">
+		{#if mapsLink}
+			<a href={mapsLink} target="_blank">
+				<button class="card-list-item__cta__button" class:secondary={secondaryType}>
+					<i class="fab fa-google"></i>Maps
+				</button>
+			</a>
+		{/if}
 		<a href={link} target="_blank">
 			<button class="card-list-item__cta__button" class:secondary={secondaryType}>
-				<i class="fa-solid fa-globe"></i>Site internet
+				<i class="fa-solid fa-globe"></i>Site
 			</button>
 		</a>
 		<button
@@ -25,7 +33,7 @@
 			class:secondary={secondaryType}
 			on:click={() => dispatch("showMap")}
 		>
-			<i class="fa-regular fa-map"></i>Carte
+			<i class="fa-regular fa-map"></i>Voir
 		</button>
 	</div>
 </div>

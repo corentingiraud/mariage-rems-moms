@@ -8,6 +8,7 @@ export const AUBERGES: Logement[] = [
 		distanceToCastle: "11min en voiture",
 		numberOfBeds: "20+",
 		link: "http://www.hautsdechenas.fr/",
+		mapsLink: "https://www.google.fr/maps/search/?api=1&query=Les+Hauts+de+Chenas",
 		location: {
 			lat: 46.2233026,
 			lng: 4.7068584

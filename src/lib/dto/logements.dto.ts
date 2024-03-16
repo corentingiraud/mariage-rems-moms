@@ -14,4 +14,5 @@ export interface Lieu {
 export interface Logement extends Lieu {
 	numberOfBeds?: string;
 	link: string;
+	mapsLink?: string;
 }

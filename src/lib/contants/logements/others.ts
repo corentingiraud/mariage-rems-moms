@@ -5,6 +5,8 @@ export const AUBERGE_DU_PARADIS: Logement = {
 	city: "Saint Amour Bellevue",
 	distanceToCastle: "6min en voiture",
 	link: "https://aubergeduparadis.fr",
+	mapsLink:
+		"https://www.google.fr/maps/search/?api=1&query=Auberge+du+Paradis+-+H%C3%B4tel+Restaurant",
 	numberOfBeds: "15",
 	location: {
 		lat: 46.2521535,

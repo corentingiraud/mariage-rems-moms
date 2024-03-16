@@ -22,10 +22,12 @@
 			</div>
 			<div class="chemin__text chemin__soiree align-right">
 				<h4>23h - Soirée</h4>
-				<h5>Des navettes taxis pour rentrer entre 2h et 5h dans un rayon de 15km du château</h5>
+				<h5>Navettes taxis entre 2h et 5h dans un rayon de 15km autours du château</h5>
 			</div>
 			<div class="chemin__text chemin__brunch">
 				<h4>12h - Brunch</h4>
+				<h5>Chateau de Beauchamp</h5>
+				<h5>La-Chapelle-de-Guinchay</h5>
 			</div>
 		</div>
 		<div class="footer">
@@ -77,6 +79,28 @@
 				font-family: BrendaHome, sans-serif;
 				font-weight: bold;
 				font-size: 30px;
+
+				@media (min-width: 600px) {
+					font-size: 40px;
+				}
+
+				@media (min-width: 800px) {
+					font-size: 50px;
+				}
+			}
+
+			h5 {
+				font-family: Candara, sans-serif;
+				font-weight: bold;
+				font-size: 13px;
+
+				@media (min-width: 600px) {
+					font-size: 18px;
+				}
+
+				@media (min-width: 800px) {
+					font-size: 25px;
+				}
 			}
 		}
 
@@ -91,6 +115,14 @@
 
 			@media (min-width: 420px) {
 				left: 30%;
+			}
+
+			@media (min-width: 800px) {
+				left: 35%;
+			}
+
+			@media (min-width: 1200px) {
+				left: 40%;
 			}
 		}
 
@@ -113,7 +145,7 @@
 		}
 
 		&__brunch {
-			top: 93%;
+			top: 90%;
 			left: 52%;
 		}
 	}

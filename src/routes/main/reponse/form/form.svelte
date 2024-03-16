@@ -73,8 +73,8 @@
 				value={formValue.firstName}
 			/>
 			<TextAreaInput
-				label="Le son qui doit absolument passer !"
-				name="Le son qui doit absolument passer !"
+				label="Un son à rajouter dans la playlist du DJ"
+				name="Un son à rajouter dans la playlist du DJ"
 				on:formChange={(e) => (formValue.playlistComment = e.detail)}
 				value={formValue.playlistComment}
 			/>

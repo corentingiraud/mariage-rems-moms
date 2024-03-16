@@ -10,9 +10,11 @@
 		return {
 			title: logement.name,
 			subtitle: `${logement.city} - ${logement.distanceToCastle}`,
-			link: logement.link
+			link: logement.link,
+			mapsLink: logement?.mapsLink
 		};
 	}
+
 	async function showMap(logement: Logement) {
 		currentDisplayedLogementInMap.set(logement);
 		currentViewId.set(2);

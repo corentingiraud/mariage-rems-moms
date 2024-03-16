@@ -1,15 +1,12 @@
 <script lang="ts">
 	import HeaderTitle from "./header-title.svelte";
 	import Icon from "$lib/assets/logo.svg";
-	import { PAGE_IDS, currentPageHTMLId, headerHeight, scrollToPageId } from "$lib";
+	import { PAGE_IDS, headerHeight, scrollToPageId } from "$lib";
 	import { onMount } from "svelte";
-	import { createEventDispatcher } from "svelte";
 	import { get } from "svelte/store";
 	import type { Writable } from "svelte/store";
 	import { pageHeight } from "$lib";
-	import JourJ from "../jour-j/jour-j.svelte";
 
-	const dispatch = createEventDispatcher();
 	const HEADER_HEIGHT = get(headerHeight);
 	let activeSectionId: PAGE_IDS | null = null;
 
@@ -56,11 +53,7 @@
 				label="Infos"
 				on:click={() => scrollToPageId(PAGE_IDS.JOUR_J)}
 			/>
-			<HeaderTitle
-				active={activeSectionId === PAGE_IDS.LOGEMENTS}
-				label="Logements"
-				on:click={() => scrollToPageId(PAGE_IDS.LOGEMENTS)}
-			/>
+
 			<HeaderTitle
 				active={activeSectionId === PAGE_IDS.LISTE_MARIAGE}
 				label="Liste mariage"
@@ -70,6 +63,11 @@
 				active={activeSectionId === PAGE_IDS.REPONSE}
 				label="Réponse"
 				on:click={() => scrollToPageId(PAGE_IDS.REPONSE)}
+			/>
+			<HeaderTitle
+				active={activeSectionId === PAGE_IDS.LOGEMENTS}
+				label="Logements"
+				on:click={() => scrollToPageId(PAGE_IDS.LOGEMENTS)}
 			/>
 		</div>
 	</div>
