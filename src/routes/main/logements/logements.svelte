@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { fly } from "svelte/transition";
 	import LogementsList from "./list/logements-list.svelte";
 	import LogementMap from "./map/logement-map.svelte";
 	import ViewSwitcher from "./switcher/view-switcher.svelte";
@@ -14,19 +13,18 @@
 	];
 
 	let activeViewId = get(currentViewId);
-	currentViewId.subscribe((newViewId) => (activeViewId = newViewId));
+	currentViewId.subscribe((newViewId) => {
+		activeViewId = newViewId;
+	});
 	let state = 1;
 	let slideWrapper: HTMLElement;
 	let anim: { in: number; out: number };
-	let marginBottom = 100;
 
 	$: currentView = views[activeViewId - 1];
 	$: if (slideWrapper) {
 		animController();
 		state = activeViewId;
 	}
-
-	$: marginBottom = slideWrapper ? slideWrapper.offsetHeight + 120 : marginBottom;
 
 	function animController() {
 		if (activeViewId == state) return;
@@ -43,30 +41,17 @@
 
 <div class="slide-container" id={PAGE_IDS.LOGEMENTS}>
 	<h1 class="page-title">Les logements</h1>
-	<ViewSwitcher {views} {marginBottom} />
 	{#key currentView.id}
-		<div
-			bind:this={slideWrapper}
-			in:fly={{ x: anim.in, duration: 500 }}
-			out:fly={{ x: anim.out, duration: 500 }}
-			class="slide"
-		>
+		<div bind:this={slideWrapper} class="slide">
 			<svelte:component this={currentView.content}></svelte:component>
 		</div>
 	{/key}
+	<ViewSwitcher {views} />
 </div>
 
 <style lang="scss">
 	.slide-container {
-		overflow: hidden;
 		position: relative;
-	}
-
-	.slide {
-		position: absolute;
-		top: 160px;
-		left: 0;
-		right: 0;
-		overflow: hidden;
+		margin-bottom: 50px;
 	}
 </style>

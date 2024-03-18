@@ -2,23 +2,34 @@
 	export let label: string, isActive: boolean;
 </script>
 
-<li class:active={isActive}>
+<div class:active={isActive}>
 	<span on:click>
 		{label}
 	</span>
-</li>
+</div>
 
 <style lang="scss">
-	li {
+	div {
 		width: 50px;
 		height: 30px;
 		display: flex;
+		border-radius: 20px;
 		justify-content: center;
 		align-items: center;
+		padding-right: 4px;
+		padding-left: 4px;
 	}
 
-	li.active > span {
+	span {
 		color: $green;
 		font-weight: 500;
+	}
+
+	div.active {
+		background-color: $green;
+	}
+
+	div.active > span {
+		color: $white;
 	}
 </style>

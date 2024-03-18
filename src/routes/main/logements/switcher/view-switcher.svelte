@@ -4,34 +4,45 @@
 	import type { LogementView } from "../utils";
 	import SwitcherItem from "./switcher-item.svelte";
 
-	export let marginBottom: number;
 	export let views: LogementView[];
 
 	let activeViewId: number = get(currentViewId);
 	currentViewId.subscribe((newViewId) => (activeViewId = newViewId));
 </script>
 
-<ul style="--margin-bottom: {marginBottom}px">
-	{#each views as { id, label }, i}
-		<SwitcherItem
-			{label}
-			isActive={activeViewId === id}
-			on:click={() => {
-				currentViewId.set(id);
-			}}
-		></SwitcherItem>
-	{/each}
-</ul>
+<div class="sticky-switch__container">
+	<div class="sticky-switch">
+		{#each views as { id, label }}
+			<SwitcherItem
+				{label}
+				isActive={activeViewId === id}
+				on:click={() => {
+					currentViewId.set(id);
+				}}
+			></SwitcherItem>
+		{/each}
+	</div>
+</div>
+<div class="sticky-wrapper"></div>
 
 <style lang="scss">
-	ul {
+	.sticky-switch {
+		&__container {
+			display: flex;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
+			transition: margin 500ms ease-in-out;
+			bottom: 5%;
+			position: sticky;
+		}
+
+		width: fit-content;
 		display: flex;
-		justify-content: center;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		margin-bottom: var(--margin-bottom);
-		transition: margin 500ms ease-in-out;
-		position: sticky;
+		align-items: center;
+		background-color: $white;
+		border-radius: 20px;
+		border: 1px solid $green;
+		outline: 1px solid $white;
 	}
 </style>
