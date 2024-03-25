@@ -35,6 +35,7 @@
 			transition: margin 500ms ease-in-out;
 			bottom: 5%;
 			position: sticky;
+			cursor: pointer;
 		}
 
 		width: fit-content;
